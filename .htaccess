@@ -1,9 +1,9 @@
-
+<!-- 
 # Canonical https/www (when using proxy)
 RewriteEngine On 
 
 RewriteCond %{SERVER_PORT} 80
-RewriteRule ^(.*)$ http://dammarkhadayat.com.np/$1 [R=301,L]
+RewriteRule ^(.*)$ https://dammarkhadayat.com.np/$1 [R=301,L]
 
 # <IfModule mod_rewrite.c>
 
@@ -17,4 +17,4 @@ RewriteRule ^(.*)$ http://dammarkhadayat.com.np/$1 [R=301,L]
 <IfModule mime_module>
   AddHandler application/x-httpd-ea-php82___lsphp .php .php8 .phtml
 </IfModule>
-# php -- END cPanel-generated handler, do not edit
+# php -- END cPanel-generated handler, do not edit -->
