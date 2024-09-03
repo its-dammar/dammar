@@ -3,7 +3,7 @@
 RewriteEngine On 
 
 RewriteCond %{SERVER_PORT} 80
-RewriteRule ^(.*)$ https://dammarkhadayat.com.np/$1 [R=301,L]
+RewriteRule ^(.*)$ http://dammarkhadayat.com.np/$1 [R=301,L]
 
 # <IfModule mod_rewrite.c>
 
