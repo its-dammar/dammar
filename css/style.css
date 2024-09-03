@@ -1,0 +1,61 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.nav-bar{
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1 !important;
+}
+.hero-main{
+    padding: 2rem 0;
+}
+
+
+.hero img{
+    height: calc(100vh - 300px);
+    width: 100%;
+    object-fit: cover;
+}
+.card{
+    border: none !important;
+}
+.hero-row, .footer-row{
+    align-items: center;
+}
+.fa-brands{
+    background: lightgoldenrodyellow !important;
+}
+.navbar-toggler{
+    border: none !important;
+}
+.interest{
+    background: lightgoldenrodyellow;
+}
+.company-image img{
+    height: 150px !important;
+    object-fit: contain;
+}
+
+@media screen and (max-width:768px) {
+    .hero-main{
+        padding: 1rem;
+    }
+    .card-body{
+        padding: 1.5rem !important;
+    } 
+   
+    .hero img{
+        height: calc(100vh - 300px);
+        width: 100%;
+        object-fit: cover;
+    }
+    .interest{
+        text-align: center;
+    }
+    /* .company{
+    padding:1rem;
+    } */
+}
