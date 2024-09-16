@@ -1,156 +1,372 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+    <title>Portfolio- Dammar Khadayat</title>
+
+    <!-- Favicon -->
+    <link href="img/poersonal/dammar-18-top.jpg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/9389aec1b9.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Dammar Khadayat</title>
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body>
-    
-<div class="nav-bar">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">DAMMAR</a>
-            <button class="navbar-toggler" id="btnToggel" onclick="onClick()" type="button"
-                data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            More
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="skills.html">Skills</a></li>
-                            <li><a class="dropdown-item" href="qualification.html">Qualification</a></li>
-                            <li><a class="dropdown-item" href="workexperience.html">Work Experience</a></li>
-                            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
-                            <li><a class="dropdown-item" href="resume.html">Resume</a></li>
-                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="d-flex">
-                    <a class="btn btn-light btn-sm " href="https://www.linkedin.com/in/its-dammar/" role="button">
-                        <i class="fa-brands fa-linkedin"></i> </a>
-                    <a class="btn btn-light btn-sm " href="https://www.facebook.com/ItsDammar20" role="button"> <i
-                            class="fa-brands fa-facebook"></i> </a>
-                    <a class="btn btn-light btn-sm " href="https://github.com/its-dammar" role="button"> <i
-                            class="fa-brands fa-github"></i> </a>
-                    <a class="btn btn-light btn-sm " href="https://www.instagram.com/its_dammar/" role="button"> <i
-                            class="fa-brands fa-instagram"></i> </a>
-                    <a class="btn btn-light btn-sm " href="https://www.youtube.com/@Dammar200" role="button"> <i
-                            class="fa-brands fa-youtube"></i> </a>
-                </div>
-            </div>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
-    </nav>
-</div>
-    <div class="card mb-3 container hero-main">
-        <div class="row g-0 hero-row">
-            <div class="col-md-6 hero">
-                <img src="assets/uploads/dammar-11.png" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-6">
-                <div class="card-body">
-                    <h5 class="card-title">Hi!, I am Dammar Khadayat.</h5>
-                    <p class="card-text">Hi, I'm Web Developer From Pokhara, Nepal like to play with computer and have
-                        interest in Developing, Designing, Trekking, Hiking And love surfing on Internet. Personally,
-                        I'm best at learning new technologies, Management and documentation. I'm good at research on new
-                        idea, good management and technologies to
-                        bring up the solution. I like to work in team enjoy entertaining themselves, I work on getting
-                        myself educated.</p>
-                        <a class="btn btn-light btn-sm shadow-sm" href="about.html" role="button">More... </a>
+    </div>
+    <!-- Spinner End -->
+
+    <div class="container">
+        <div class="row g-5">
+            <aside class="col-lg-3 sticky-lg-top vh-100">
+                <div class="d-flex flex-column h-100 text-center overflow-auto shadow">
+                    <div class="profile-image p-3">
+                        <img class="w-100 img-fluid mb-4 rounded-circle" src="img/poersonal/dammar-18-top.jpg"
+                            alt="Image">
+                    </div>
+                    <h4 class="text-primary mt-2">Dammar Khadayat</h4>
+                    <div class="mb-4" style="height: 22px;">
+                        <h4 class="typed-text-output d-inline-block text-light"></h4>
+                        <div class="typed-text d-none">Entrepreneur, IT Enthusiast , BCA, Web Development ,
+                            Collaboration , Leadership , UI/UX Designer , HR, AI</div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-auto mb-3">
+                        <a class="btn btn-secondary btn-square mx-1" href="https://www.twitter.com/its_dammar/"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-secondary btn-square mx-1" href="https://www.facebook.com/itsDammar20"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-secondary btn-square mx-1" href="https://www.linkedin.com/in/its-dammar/"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-secondary btn-square mx-1" href="https://www.instagram.com/its_dammar/"><i
+                                class="fab fa-instagram"></i></a>
+                        <a class="btn btn-secondary btn-square mx-1" href="https://www.github.com/its-dammar/"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                    <div class="d-flex align-items-end justify-content-between border-top">
+                        <a href="resume.pdf" download="" class="btn w-50 border-end">Download CV</a>
+                        <a href="contact.html" class="btn w-50 btn-scroll">Contact Me</a>
                     </div>
                 </div>
+            </aside>
+            <div class="col-lg-9 py-2">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light"
+                    style="position: sticky; top:0; z-index:5; border-radius:10px;">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Navbar</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about.html">About</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        More info..
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="skills.html">Skills</a></li>
+                                        <li><a class="dropdown-item" href="resume.html">Resume</a></li>
+                                        <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+                                        <li><a class="dropdown-item" href="portfolio.html">Portfolio</a></li>
+                                        <li><a class="dropdown-item" href="projects.html">Projects</a></li>
+                                        <li><a class="dropdown-item" href="qualification.html">Qualification</a></li>
+                                        <li><a class="dropdown-item" href="experience.html">Experience</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.html">Contact</a>
+                                </li>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- About Start -->
+                <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+                    <div>
+                        <h1 class="title pb-3 mb-5">About Me</h1>
+                        <p>Hi, I'm Dammar Khadayat. With a solid foundation in Computer Applications and a strong
+                            commitment to innovation, I can achieve market-leading results through leading-edge product
+                            solutions that conform to industry best practices. </p>
+                        <a href="about.html">Read More...</a>
+                    </div>
+                </section>
+                <!-- About End -->
+
+                <!-- Skills Start -->
+                <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="title pb-3 mb-5">Skills</h1>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="skill mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-2">Frontend Web Development</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="skill mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-2">PHP, Laravel</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="skills.html">Show More ...</a>
+                </section>
+                <!-- Skills End -->
+
+                <!-- Expericence Start -->
+                <section class="py-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="title pb-3 mb-5">Expericence</h1>
+                    <div class="border-start border-2 border-light pt-2 ps-5">
+                        <div class="position-relative mb-4">
+                            <span class="bi bi-arrow-right fs-4 text-light position-absolute"
+                                style="top: -5px; left: -50px;"></span>
+                            <h5><strong>Managing Director</strong></h5>
+                            <h5>May 2023 - Present | 10 months</h5>
+                            <em>XDezo Technologies, Pokhara, Gandaki, Nepal, 33700</em>
+                            <p>
+                                As the Managing Director, I oversee strategic operations and provide leadership
+                                to drive
+                                the company's vision. Responsibilities include guiding the team, fostering
+                                business
+                                growth, and ensuring operational excellence.</p>
+                        </div>
+                        <div class="position-relative mb-4">
+                            <span class="bi bi-arrow-right fs-4 text-light position-absolute"
+                                style="top: -5px; left: -50px;"></span>
+                            <h5><strong>Academic Coordinator</strong></h5>
+                            <h5>October 2021 - Present | 2 years 5 months</h5>
+                            <em>XDezo Academy, Pokhara, Gandaki, Nepal, 33700</em>
+                            <p>
+                                In my role as Academic Coordinator, I am responsible for orchestrating
+                                educational
+                                programs, ensuring academic excellence, and fostering a conducive learning
+                                environment.
+                            </p>
+                        </div>
+                    </div>
+                    <a href="experience.html">Show More...</a>
+                </section>
+                <!-- Expericence End -->
+
+                <!-- Services Start -->
+                <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="title pb-3 mb-5">Services</h1>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <i class="fa fa-2x fa-laptop-code mx-auto mb-4"></i>
+                                <h5 class="mb-2">Website Design and Development</h5>
+                                <p class="mb-0">We design and develop responsive, user-friendly websites that blend
+                                    modern aesthetics with seamless functionality. Our services include custom web
+                                    design, development, and e-commerce solutions, ensuring your site looks great and
+                                    performs efficiently, helping your business succeed online.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <i class="fa fa-2x fa-laptop-code mx-auto mb-4"></i>
+                                <h5 class="mb-2">UI/UX Design </h5>
+                                <p class="mb-0">We create intuitive and visually appealing user interfaces (UI) that
+                                    offer seamless user experiences (UX). Our approach ensures that every design is both
+                                    functional and aesthetically pleasing, focusing on user interaction, navigation, and
+                                    overall satisfaction. From wireframes to final prototypes, we craft designs that not
+                                    only look great but also enhance usability, engagement, and conversion.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="services.html">View More ...</a>
+                </section>
+                <!-- Services End -->
+
+                <!-- Portfolio Start -->
+                <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="title pb-3 mb-5">Portfolio</h1>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 text-center mb-2">
+                                    <ul class="list-inline mb-4" id="portfolio-flters">
+                                        <li class="btn btn-secondary active" data-filter="*"><i
+                                                class="fa fa-star me-2"></i>All</li>
+                                        <li class="btn btn-secondary" data-filter=".first"><i
+                                                class="fa fa-laptop-code me-2"></i>Design</li>
+                                        <li class="btn btn-secondary" data-filter=".second"><i
+                                                class="fa fa-mobile-alt me-2"></i>Development</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row portfolio-container">
+                                <div class="col-md-6 mb-4 portfolio-item first">
+                                    <div class="position-relative overflow-hidden mb-2">
+                                        <img class="img-fluid w-100" src="img/portfolio-1.jpg" alt="">
+                                        <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                            <a href="img/portfolio-1.jpg" data-lightbox="portfolio">
+                                                <i class="bi bi-plus text-light"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4 portfolio-item second">
+                                    <div class="position-relative overflow-hidden mb-2">
+                                        <img class="img-fluid w-100" src="img/portfolio-1.jpg" alt="">
+                                        <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                            <a href="img/portfolio-1.jpg" data-lightbox="portfolio">
+                                                <i class="bi bi-plus text-light"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Portfolio End -->
+
+                <!-- Testimonial Start -->
+                <!-- <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="title pb-3 mb-5">Testimonial</h1>
+                    <div class="owl-carousel testimonial-carousel">
+                        <div class="text-left">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <p class="fs-4 mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr
+                                dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet
+                                eirmod eos, labore diam clita</p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid" src="img/testimonial-1.jpg" style="width: 60px; height: 60px;">
+                                <div class="ps-3">
+                                    <p class="text-primary fs-5 mb-1">Client Name</p>
+                                    <i>Profession</i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-left">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <p class="fs-4 mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr
+                                dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet
+                                eirmod eos, labore diam clita</p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;">
+                                <div class="ps-3">
+                                    <p class="text-primary fs-5 mb-1">Client Name</p>
+                                    <i>Profession</i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-left">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <p class="fs-4 mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr
+                                dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet
+                                eirmod eos, labore diam clita</p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;">
+                                <div class="ps-3">
+                                    <p class="text-primary fs-5 mb-1">Client Name</p>
+                                    <i>Profession</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> -->
+                <!-- Testimonial End -->
+
+                <!-- Footer Start -->
+                <section class="wow fadeIn" data-wow-delay="0.1s">
+                    <div class="bg-secondary text-light text-center p-5">
+                        <div class="d-flex justify-content-center mb-4">
+                            <a class="btn btn-secondary btn-square mx-1" href="https://www.twitter.com/its_dammar/"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn btn-secondary btn-square mx-1" href="https://www.facebook.com/itsDammar20"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-secondary btn-square mx-1"
+                                href="https://www.linkedin.com/in/its-dammar/"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-secondary btn-square mx-1" href="https://www.instagram.com/its_dammar/"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="btn btn-secondary btn-square mx-1" href="https://www.github.com/its-dammar/"><i
+                                    class="fab fa-github"></i></a>
+                        </div>
+                        <div class="d-flex justify-content-center mb-3">
+                            <a class="text-light px-3 border-end" href="#">Privacy</a>
+                            <a class="text-light px-3 border-end" href="#">Terms</a>
+                            <a class="text-light px-3 border-end" href="#">FAQs</a>
+                            <a class="text-light px-3" href="#">Help</a>
+                        </div>
+
+                        <p class="m-0">&copy; All Rights Reserved. Designed by <a
+                                href="https://dammarkhadayat.com.np">Dammar Khdayat</a></p>
+                    </div>
+                </section>
+                <!-- Footer End -->
             </div>
         </div>
-        <footer class=" ">
-    <div class="interest py-3">
-        <div class="container interest">
-            <div class="row footer-row">
-                <div class="col-lg-6 col-sm-12">
-                    <h3>Dammar Khadayat</h3>
-                    <p>dammarkhadayat.com.np</p>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <a class="btn btn-light btn-sm " href="https://www.linkedin.com/in/its-dammar/" role="button">
-                        <i class="fa-brands fa-linkedin"></i> </a>
-                    <a class="btn btn-light btn-sm " href="https://www.facebook.com/ItsDammar20" role="button"> <i
-                            class="fa-brands fa-facebook"></i> </a>
-                    <a class="btn btn-light btn-sm " href="https://github.com/its-dammar" role="button"> <i
-                            class="fa-brands fa-github"></i> </a>
-                    <a class="btn btn-light btn-sm " href="https://www.instagram.com/its_dammar/" role="button"> <i
-                            class="fa-brands fa-instagram"></i> </a>
-                    <a class="btn btn-light btn-sm " href="https://www.youtube.com/@Dammar200" role="button"> <i
-                            class="fa-brands fa-youtube"></i> </a>
-                    <p class="text-success">Thank You, Visit Again !!!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="text-center bg-light py-3">
-        <p>© Copyright Dammar Khadayat. All Rights Reserved <br>
-            <span>Designed by <a href="https://www.dammarkhadayat.com.np" class="text-decoration-none">Dammar
-                    khadayat</a></span>
-        </p>
-    </div>
-</footer>
-
- <!---->
-    <!-- ============================================================== -->
-    <!-- chat API -->
-    <!-- ============================================================== -->
-    
-    <!-- Messenger Chat Plugin Code -->
-    <div id="fb-root"></div>
-
-    <!-- Your Chat Plugin code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
     </div>
 
-    <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "2134310760216618");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
 
-    <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v18.0'
-        });
-      };
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-</script>
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+
 </body>
 
 </html>
-
