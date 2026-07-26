@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poetry &amp; Reflections — Dammar Khadayat</title>
+<meta name="description" content="Poetry and reflections on nature, mindfulness, and the human experience by Dammar Khadayat.">
+<meta name="author" content="Dammar Khadayat">
+<meta name="theme-color" content="#0B2447">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0B2447;--navy6:#123259;--navy5:#1B4272;--gold:#B8873B;--gold-l:#D0A659;
+  --ink:#111C2E;--body:#4A5568;--line:#E4E8ED;--mist:#F6F8FA;--cream:#FFF9F0;
+  --serif:'Cormorant Garamond','Playfair Display',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--body);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy5) 40%,var(--navy6) 100%);
+  overflow:hidden;text-align:center;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 20%,rgba(184,135,59,.12) 0%,transparent 60%),
+             radial-gradient(ellipse at 70% 80%,rgba(184,135,59,.08) 0%,transparent 50%);
+}
+.hero-particles{position:absolute;inset:0;overflow:hidden}
+.hero-particles span{
+  position:absolute;display:block;border-radius:50%;background:rgba(184,135,59,.15);
+  animation:float linear infinite;
+}
+@keyframes float{
+  0%{transform:translateY(100vh) rotate(0deg);opacity:0}
+  10%{opacity:1}90%{opacity:1}
+  100%{transform:translateY(-10vh) rotate(720deg);opacity:0}
+}
+.hero-content{position:relative;z-index:2;padding:2rem;max-width:800px}
+.hero-label{
+  font-family:var(--sans);font-size:.75rem;font-weight:600;letter-spacing:.25em;
+  text-transform:uppercase;color:var(--gold-l);margin-bottom:1.5rem;
+}
+.hero h1{
+  font-family:var(--serif);font-size:clamp(2.5rem,7vw,5rem);font-weight:600;
+  color:#fff;line-height:1.1;letter-spacing:-.02em;
+}
+.hero h1 em{font-style:italic;color:var(--gold-l)}
+.hero-rule{width:80px;height:2px;background:var(--gold);margin:2rem auto;border-radius:1px}
+.hero-sub{
+  font-family:var(--serif);font-size:clamp(1.1rem,2.5vw,1.4rem);color:rgba(255,255,255,.65);
+  font-style:italic;line-height:1.7;max-width:600px;margin:0 auto;
+}
+.hero-scroll{
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;color:rgba(255,255,255,.4);
+  font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;
+  animation:bounce 2s ease-in-out infinite;
+}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+.hero-scroll svg{width:20px;height:20px}
+
+/* ---------- NAV ---------- */
+.topnav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;
+  transition:background .3s,box-shadow .3s;
+}
+.topnav.scrolled{background:rgba(255,255,255,.97);box-shadow:0 1px 12px rgba(11,36,71,.08)}
+.topnav.scrolled .nav-logo{color:var(--navy)}
+.topnav.scrolled .nav-links a{color:var(--body)}
+.topnav.scrolled .nav-links a:hover{color:var(--navy)}
+.nav-logo{
+  font-family:var(--serif);font-size:1.1rem;font-weight:600;color:#fff;
+  transition:color .3s;
+}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{
+  font-size:.85rem;font-weight:500;color:rgba(255,255,255,.65);transition:color .2s;
+  position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;left:0;bottom:-3px;width:0;height:1.5px;background:var(--gold);
+  transition:width .25s;
+}
+.nav-links a:hover{color:#fff}.nav-links a:hover::after{width:100%}
+.topnav.scrolled .nav-links a::after{background:var(--gold)}
+.nav-back{
+  display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;font-weight:500;
+  color:rgba(255,255,255,.65);transition:color .2s;
+}
+.nav-back:hover{color:#fff}
+.topnav.scrolled .nav-back{color:var(--body)}.topnav.scrolled .nav-back:hover{color:var(--navy)}
+@media(max-width:768px){.nav-links{display:none}}
+
+/* ---------- POEMS ---------- */
+.poems-section{
+  padding:6rem 2rem;max-width:900px;margin:0 auto;
+}
+.poems-intro{text-align:center;margin-bottom:5rem}
+.poems-intro h2{
+  font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:600;
+  color:var(--navy);line-height:1.2;
+}
+.poems-intro .rule{width:50px;height:2px;background:var(--gold);margin:1.5rem auto;border-radius:1px}
+.poems-intro p{
+  font-family:var(--serif);font-size:1.1rem;line-height:1.8;color:var(--body);
+  max-width:550px;margin:0 auto;font-style:italic;
+}
+
+.poem{
+  margin-bottom:5rem;padding:3rem 0;border-bottom:1px solid var(--line);position:relative;
+  opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s;
+}
+.poem.visible{opacity:1;transform:none}
+.poem:last-child{border-bottom:none}
+.poem-number{
+  position:absolute;top:0;right:0;font-family:var(--serif);font-size:5rem;font-weight:700;
+  color:rgba(184,135,59,.07);line-height:1;pointer-events:none;
+}
+.poem-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
+.poem-tag{
+  font-size:.65rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gold);background:rgba(184,135,59,.08);padding:.3rem .8rem;border-radius:2px;
+}
+.poem-date{font-size:.8rem;color:var(--body)}
+.poem h3{
+  font-family:var(--serif);font-size:clamp(1.5rem,3vw,2rem);font-weight:600;
+  color:var(--navy);margin-bottom:1.5rem;line-height:1.25;
+}
+.poem-body{
+  font-family:var(--serif);font-size:1.2rem;line-height:2;color:var(--ink);
+  max-width:600px;
+}
+.poem-body p{margin-bottom:.25rem}
+.poem-body .stanza{margin-bottom:1.5rem}
+.poem-author{
+  margin-top:2rem;font-size:.85rem;font-weight:500;color:var(--body);font-style:italic;
+}
+
+/* ---------- QUOTE SECTION ---------- */
+.quote-section{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy5) 100%);
+  padding:5rem 2rem;text-align:center;position:relative;overflow:hidden;
+}
+.quote-section::before{
+  content:'\201C';position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);
+  font-family:var(--serif);font-size:20rem;color:rgba(184,135,59,.06);pointer-events:none;
+}
+.quote-text{
+  font-family:var(--serif);font-size:clamp(1.3rem,3vw,1.8rem);font-style:italic;
+  color:rgba(255,255,255,.85);line-height:1.8;max-width:700px;margin:0 auto;
+  position:relative;z-index:1;
+}
+.quote-author{
+  margin-top:2rem;font-size:.85rem;font-weight:600;color:var(--gold-l);
+  letter-spacing:.1em;position:relative;z-index:1;
+}
+
+/* ---------- WRITING ---------- */
+.writing-section{
+  padding:5rem 2rem;max-width:900px;margin:0 auto;
+}
+.writing-section h2{
+  font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:600;
+  color:var(--navy);margin-bottom:2rem;
+}
+.writing-section p{
+  font-size:1rem;line-height:1.9;color:var(--body);margin-bottom:1.25rem;
+}
+.writing-section a{color:var(--gold);font-weight:600;border-bottom:1px solid transparent}
+.writing-section a:hover{border-bottom-color:var(--gold)}
+
+/* ---------- FOOTER ---------- */
+.footer{background:var(--navy);color:rgba(255,255,255,.55);padding:3rem 2rem}
+.footer-inner{
+  max-width:900px;margin:0 auto;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:1rem;
+}
+.footer-left{display:flex;align-items:center;gap:.75rem}
+.footer-initial{
+  width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);
+  display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:#fff;font-size:.85rem;
+}
+.footer-name{font-family:var(--serif);font-weight:600;color:#fff;font-size:.95rem}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-size:.8rem;transition:color .2s}
+.footer-links a:hover{color:var(--gold-l)}
+.footer-copy{width:100%;text-align:center;font-size:.75rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08)}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .poem{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="topnav" id="topnav">
+  <a href="index.html" class="nav-back">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    Main Site
+  </a>
+  <span class="nav-logo">Poetry</span>
+  <div class="nav-links">
+    <a href="#poems">Poems</a>
+    <a href="#about-writing">Writing</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-content">
+    <p class="hero-label">Creative Writing by Dammar Khadayat</p>
+    <h1>Poetry &amp;<br><em>Reflections</em></h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">
+      Where the sky breathes and the soul listens &mdash;
+      poems from the mountains of Pokhara, where every sunrise
+      writes a new verse on the still surface of Phewa Lake.
+    </p>
+  </div>
+  <div class="hero-scroll">
+    Scroll
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+  </div>
+</section>
+
+<!-- POEMS -->
+<section class="poems-section" id="poems">
+  <div class="poems-intro">
+    <h2>Selected Poems</h2>
+    <div class="rule"></div>
+    <p>
+      A quieter side &mdash; words that hold the mountains, the lakes, and the quiet spaces
+      between code and classroom.
+    </p>
+  </div>
+
+  <article class="poem">
+    <span class="poem-number">01</span>
+    <div class="poem-meta">
+      <span class="poem-tag">Poetry</span>
+      <span class="poem-date">Pokhara</span>
+    </div>
+    <h3>Where the Sky Breathes</h3>
+    <div class="poem-body">
+      <div class="stanza">
+        <p>Where the sky breathes and the soul listens &mdash;</p>
+        <p>staying open to all that life and nature offer,</p>
+        <p>flowing with the rhythm of nature,</p>
+      </div>
+      <div class="stanza">
+        <p>grounded in the mountains of Pokhara,</p>
+        <p>where every sunrise writes a new poem</p>
+        <p>on the still surface of Phewa Lake.</p>
+      </div>
+    </div>
+    <p class="poem-author">&mdash; Dammar Khadayat</p>
+  </article>
+
+  <article class="poem">
+    <span class="poem-number">02</span>
+    <div class="poem-meta">
+      <span class="poem-tag">Reflection</span>
+      <span class="poem-date">Pokhara</span>
+    </div>
+    <h3>Code &amp; Compassion</h3>
+    <div class="poem-body">
+      <div class="stanza">
+        <p>The same hand that writes a loop</p>
+        <p>holds a student's doubt gently.</p>
+        <p>In every line of code, a line of care &mdash;</p>
+      </div>
+      <div class="stanza">
+        <p>for the machine must be precise,</p>
+        <p>but the teacher must be kind.</p>
+        <p>Both demand patience. Both require practice.</p>
+      </div>
+    </div>
+    <p class="poem-author">&mdash; Dammar Khadayat</p>
+  </article>
+
+  <article class="poem">
+    <span class="poem-number">03</span>
+    <div class="poem-meta">
+      <span class="poem-tag">Poetry</span>
+      <span class="poem-date">Pokhara</span>
+    </div>
+    <h3>The Annapurna Dawn</h3>
+    <div class="poem-body">
+      <div class="stanza">
+        <p>The peaks catch fire before the world wakes,</p>
+        <p>orange bleeding into snow,</p>
+        <p>and for a moment the mountain</p>
+      </div>
+      <div class="stanza">
+        <p>holds the sun like a secret</p>
+        <p>it has been keeping all night.</p>
+        <p>Then the light spills, and everything begins.</p>
+      </div>
+    </div>
+    <p class="poem-author">&mdash; Dammar Khadayat</p>
+  </article>
+
+  <article class="poem">
+    <span class="poem-number">04</span>
+    <div class="poem-meta">
+      <span class="poem-tag">Reflection</span>
+      <span class="poem-date">Pokhara</span>
+    </div>
+    <h3>On Building &amp; Being Built</h3>
+    <div class="poem-body">
+      <div class="stanza">
+        <p>We build systems that outlive us,</p>
+        <p>teach students who surpass us,</p>
+        <p>write papers that outlast the semester.</p>
+      </div>
+      <div class="stanza">
+        <p>But what stays longest</p>
+        <p>is the moment a student's eyes light up</p>
+        <p>and the code finally runs.</p>
+      </div>
+    </div>
+    <p class="poem-author">&mdash; Dammar Khadayat</p>
+  </article>
+
+  <article class="poem">
+    <span class="poem-number">05</span>
+    <div class="poem-meta">
+      <span class="poem-tag">Poetry</span>
+      <span class="poem-date">Pokhara</span>
+    </div>
+    <h3>The Lakeside Hour</h3>
+    <div class="poem-body">
+      <div class="stanza">
+        <p>At Phewa, the water holds the sky</p>
+        <p>so carefully, as if afraid</p>
+        <p>to spill a single cloud.</p>
+      </div>
+      <div class="stanza">
+        <p>Fishermen push their boats through mist,</p>
+        <p>temple bells echo across the valley,</p>
+        <p>and the mountains keep their ancient watch.</p>
+      </div>
+      <div class="stanza">
+        <p>This is the hour I write from &mdash;</p>
+        <p>when the world is both still and beginning.</p>
+      </div>
+    </div>
+    <p class="poem-author">&mdash; Dammar Khadayat</p>
+  </article>
+
+  <article class="poem">
+    <span class="poem-number">06</span>
+    <div class="poem-meta">
+      <span class="poem-tag">Reflection</span>
+      <span class="poem-date">Pokhara</span>
+    </div>
+    <h3>The Debugging Hour</h3>
+    <div class="poem-body">
+      <div class="stanza">
+        <p>There is a kind of prayer in debugging &mdash;</p>
+        <p>the patient return to what you thought was right,</p>
+        <p>the humility to read each line again.</p>
+      </div>
+      <div class="stanza">
+        <p>The error is not the enemy.</p>
+        <p>It is the teacher in disguise,</p>
+        <p>asking you to look more carefully</p>
+        <p>at the thing you almost understood.</p>
+      </div>
+    </div>
+    <p class="poem-author">&mdash; Dammar Khadayat</p>
+  </article>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <blockquote class="quote-text">
+    Poetry is the language of the soul. Technology is the language of possibility.
+    Between them, I find my balance.
+  </blockquote>
+  <p class="quote-author">&mdash; Dammar Khadayat, Pokhara</p>
+</section>
+
+<!-- ABOUT WRITING -->
+<section class="writing-section" id="about-writing">
+  <h2>About My Writing</h2>
+  <p>
+    I write because it keeps me honest. Code can be precise; teaching requires empathy; research
+    demands rigour. Poetry lives in the space between all three &mdash; where the rhythm of a
+    line matters as much as its meaning.
+  </p>
+  <p>
+    Most of these poems come from Pokhara, from early mornings at Phewa Lake or late evenings
+    watching the Annapurna range catch the last light. The mountains here teach patience. The
+    lake teaches stillness. Both inform how I approach design, code and the classroom.
+  </p>
+  <p>
+    My reflections on technology, education and mindful living are also published on
+    <a href="https://www.linkedin.com/in/its-dammar/" target="_blank" rel="noopener">LinkedIn</a>
+    and shared through workshops and guest sessions across Nepal.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span class="footer-initial">D</span>
+      <span class="footer-name">Dammar Khadayat</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#research">Research</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Dammar Khadayat &middot; Pokhara, Nepal</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Particles
+  var c=document.getElementById('particles');
+  for(var i=0;i<20;i++){
+    var s=document.createElement('span');
+    var size=Math.random()*6+2;
+    s.style.width=size+'px';s.style.height=size+'px';
+    s.style.left=Math.random()*100+'%';
+    s.style.animationDuration=(Math.random()*15+10)+'s';
+    s.style.animationDelay=(Math.random()*10)+'s';
+    c.appendChild(s);
+  }
+
+  // Nav scroll
+  var nav=document.getElementById('topnav');
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('scrolled',window.scrollY>80);
+  },{passive:true});
+
+  // Poems reveal
+  var poems=document.querySelectorAll('.poem');
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}
+    });
+  },{threshold:0.15});
+  poems.forEach(function(p){io.observe(p)});
+})();
+</script>
+</body>
+</html>

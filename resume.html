@@ -1,224 +1,541 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Free Website Template" name="keywords">
-    <meta content="Free Website Template" name="description">
-    <title>Portfolio- Dammar Khadayat</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Dammar Khadayat</title>
+<meta name="description" content="Professional curriculum vitae of Dammar Khadayat — Lecturer, Researcher, Web Developer and SATRI Co-Founder.">
+<meta name="author" content="Dammar Khadayat">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0B2447;--gold:#B8873B;--body:#4A5568;--line:#E4E8ED;--mist:#F6F8FA;--sans:'Inter',system-ui,sans-serif;--serif:'Source Serif 4',Georgia,serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--body);background:#fff;-webkit-font-smoothing:antialiased}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
 
-    <!-- Favicon -->
-    <link href="img/poersonal/dammar-18-top.jpg" rel="icon">
+/* ---------- SCREEN LAYOUT ---------- */
+*{box-sizing:border-box}
+.cv-wrapper{max-width:860px;margin:0 auto;padding:1.5rem}
+@media(min-width:640px){ .cv-wrapper{padding:2rem} }
+.cv-topbar{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:.75rem 0 1rem;border-bottom:2px solid var(--navy);margin-bottom:1.5rem;
+}
+@media(min-width:640px){ .cv-topbar{padding:1rem 0 1.5rem;margin-bottom:2rem} }
+.cv-topbar h1{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--navy)}
+@media(min-width:640px){ .cv-topbar h1{font-size:1.8rem} }
+.cv-topbar-right{text-align:right}
+.cv-topbar-right p{font-size:.7rem;color:var(--body);line-height:1.6}
+@media(min-width:640px){ .cv-topbar-right p{font-size:.8rem} }
+.cv-print-btn{
+  display:inline-flex;align-items:center;gap:.5rem;margin-top:.5rem;
+  padding:.5rem 1rem;border:1.5px solid var(--navy);border-radius:4px;
+  font-size:.7rem;font-weight:600;color:var(--navy);background:#fff;cursor:pointer;
+  transition:all .2s;letter-spacing:.05em;text-transform:uppercase;
+}
+@media(min-width:640px){ .cv-print-btn{padding:.6rem 1.2rem;font-size:.75rem} }
+.cv-print-btn:hover{background:var(--navy);color:#fff}
+.cv-print-btn svg{width:14px;height:14px}
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+.cv-two{display:grid;grid-template-columns:1fr;gap:1.5rem}
+@media(min-width:768px){ .cv-two{grid-template-columns:1fr 1.6fr;gap:2rem} }
+.cv-section{margin-bottom:1.25rem}
+@media(min-width:640px){ .cv-section{margin-bottom:1.75rem} }
+.cv-section-title{
+  font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:.35rem;margin-bottom:.6rem;
+}
+@media(min-width:640px){ .cv-section-title{font-size:.65rem;padding-bottom:.4rem;margin-bottom:.75rem;letter-spacing:.18em} }
+.cv-left .cv-section-title{color:var(--gold)}
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+/* Summary */
+.cv-summary{font-size:.8rem;line-height:1.65;color:var(--body)}
+@media(min-width:640px){ .cv-summary{font-size:.85rem;line-height:1.7} }
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+/* Experience / Education items */
+.cv-item{margin-bottom:.75rem}
+@media(min-width:640px){ .cv-item{margin-bottom:1rem} }
+.cv-item-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.25rem}
+.cv-item h4{font-size:.8rem;font-weight:700;color:var(--navy);line-height:1.3}
+@media(min-width:640px){ .cv-item h4{font-size:.9rem} }
+.cv-item .cv-date{font-size:.65rem;font-weight:600;color:var(--gold);letter-spacing:.05em;white-space:nowrap}
+@media(min-width:640px){ .cv-item .cv-date{font-size:.7rem} }
+.cv-item .cv-org{font-size:.75rem;color:var(--body);margin-top:.1rem}
+@media(min-width:640px){ .cv-item .cv-org{font-size:.8rem} }
+.cv-item p{font-size:.75rem;line-height:1.6;margin-top:.3rem;color:var(--body)}
+@media(min-width:640px){ .cv-item p{font-size:.8rem;line-height:1.65;margin-top:.35rem} }
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+/* Skills */
+.cv-skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+@media(min-width:640px){ .cv-skills-grid{gap:.5rem} }
+.cv-skill{
+  font-size:.7rem;padding:.3rem .5rem;border:1px solid var(--line);border-radius:3px;
+  text-align:center;font-weight:500;color:var(--navy);
+}
+@media(min-width:640px){ .cv-skill{font-size:.75rem;padding:.35rem .6rem} }
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "ofbdr291ni");
-    </script>
+/* Tags */
+.cv-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.4rem}
+@media(min-width:640px){ .cv-tags{gap:.35rem;margin-top:.5rem} }
+.cv-tag{
+  font-size:.6rem;padding:.2rem .45rem;border-radius:2px;
+  background:var(--mist);color:var(--body);font-weight:500;
+}
+@media(min-width:640px){ .cv-tag{font-size:.65rem;padding:.2rem .5rem} }
+
+/* Contact */
+.cv-contact-item{
+  display:flex;align-items:flex-start;gap:.4rem;font-size:.75rem;margin-bottom:.35rem;
+}
+@media(min-width:640px){ .cv-contact-item{gap:.5rem;font-size:.8rem;margin-bottom:.4rem} }
+.cv-contact-item svg{width:12px;height:12px;flex-shrink:0;margin-top:2px;color:var(--gold)}
+@media(min-width:640px){ .cv-contact-item svg{width:13px;height:13px} }
+.cv-contact-item a{color:var(--body)}
+.cv-contact-item a:hover{color:var(--gold)}
+
+/* Links */
+.cv-links{margin-top:.4rem}
+.cv-link{font-size:.7rem;display:block;margin-bottom:.25rem}
+@media(min-width:640px){ .cv-link{font-size:.75rem;margin-bottom:.3rem} }
+
+/* ---------- PRINT STYLES ---------- */
+@media print{
+  *{margin:0!important;padding:0!important;box-sizing:border-box!important}
+  body{font-family:'Inter',system-ui,sans-serif;color:#000;background:#fff;font-size:8.5pt;line-height:1.4;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .cv-print-btn{display:none!important}
+  .cv-wrapper{max-width:100%!important;padding:12mm 14mm!important;margin:0!important;width:210mm;min-height:297mm}
+  .cv-topbar{border-bottom:1.5px solid #0B2447!important;padding:0 0 .4rem!important;margin-bottom:.6rem!important;display:flex;justify-content:space-between;align-items:center}
+  .cv-topbar h1{font-size:14pt!important;color:#0B2447!important}
+  .cv-topbar-right{text-align:right}
+  .cv-topbar-right p{font-size:7pt!important;margin:0!important;padding:0!important;line-height:1.4!important}
+  .cv-topbar-right .cv-print-btn{display:none!important}
+  .cv-two{grid-template-columns:155px 1fr!important;gap:0.8rem!important}
+  .cv-section{margin-bottom:.5rem!important;page-break-inside:avoid}
+  .cv-item{page-break-inside:avoid;margin-bottom:.35rem!important}
+  .cv-item h4{font-size:8pt!important;color:#0B2447!important;line-height:1.2!important}
+  .cv-item .cv-date{font-size:6.5pt!important}
+  .cv-item .cv-org{font-size:7pt!important}
+  .cv-item p{font-size:7pt!important;line-height:1.4!important;margin-top:.1rem!important}
+  .cv-summary{font-size:7.5pt!important;line-height:1.45!important}
+  .cv-section-title{font-size:5.5pt!important;letter-spacing:.14em!important;padding-bottom:.2rem!important;margin-bottom:.35rem!important;color:#666!important;border-bottom-color:#ccc!important}
+  .cv-skill{font-size:6.5pt!important;padding:.15rem .3rem!important;border-color:#ccc!important}
+  .cv-skills-grid{gap:.2rem!important;grid-template-columns:1fr 1fr!important}
+  .cv-tag{font-size:5.5pt!important;padding:.1rem .3rem!important;background:#f0f0f0!important}
+  .cv-contact-item{font-size:6.5pt!important;margin-bottom:.15rem!important}
+  .cv-contact-item svg{width:8px!important;height:8px!important;color:#666!important}
+  .cv-contact-item a{color:#000!important}
+  a{color:#000!important;text-decoration:none!important}
+  h1,h2,h3,h4{color:#000!important}
+  .cv-item h4{color:#0B2447!important}
+  @page{margin:10mm 12mm;size:A4 portrait}
+  @page:first{margin-top:10mm}
+}
+@media(max-width:768px){
+  .cv-two{grid-template-columns:1fr!important}
+  .cv-topbar{flex-direction:column;align-items:flex-start;gap:.5rem}
+  .cv-wrapper{padding:1rem}
+}
+</style>
 </head>
-
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+
+<div class="cv-wrapper">
+
+  <!-- HEADER -->
+  <div class="cv-topbar">
+    <div>
+      <h1>Dammar Khadayat</h1>
+      <p style="font-size:.85rem;color:var(--gold);font-weight:600;margin-top:.25rem">
+        Lecturer, AI Researcher, Web Developer &amp; Entrepreneur
+      </p>
     </div>
-    <!-- Spinner End -->
+    <div class="cv-topbar-right">
+      <p>Pokhara, Kaski, Gandaki Province, Nepal 33700</p>
+      <p>dammar.24063@gandakiuniversity.edu.np</p>
+      <p>info@dammarkhadayat.com.np</p>
+      <p>+977-9868067264</p>
+      <p><a href="https://dammarkhadayat.com.np" target="_blank">dammarkhadayat.com.np</a></p>
+      <button class="cv-print-btn" onclick="window.print()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 11l5 5 5-5M5 21h14"/></svg>
+        Download PDF
+      </button>
+    </div>
+  </div>
 
-    <div class="container">
-        <div class="row g-5">
-            <aside class="col-lg-3 sticky-lg-top vh-100">
-                <div class="d-flex flex-column h-100 text-center overflow-auto shadow">
-                    <div class="profile-image p-3">
-                        <img class="w-100 img-fluid mb-4 rounded-circle" src="img/poersonal/dammar-18-top.jpg" alt="Image">
-                    </div>
-                    <h4 class="text-primary mt-2">Dammar Khadayat</h4>
-                    <div class="mb-4" style="height: 22px;">
-                        <h4 class="typed-text-output d-inline-block text-light"></h4>
-                        <div class="typed-text d-none">Entrepreneur, IT Enthusiast , BCA, Web Development ,
-                            Collaboration , Leadership , UI/UX Designer , HR, AI</div>
-                    </div>
-                    <div class="d-flex justify-content-center mt-auto mb-3">
-                        <a class="btn btn-secondary btn-square mx-1" href="https://www.twitter.com/its_dammar1/"><i
-                                class="fab fa-twitter"></i></a>
-                        <a class="btn btn-secondary btn-square mx-1" href="https://www.facebook.com/itsDammar20"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-secondary btn-square mx-1" href="https://www.linkedin.com/in/its-dammar/"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-secondary btn-square mx-1" href="https://www.instagram.com/its_dammar/"><i
-                                class="fab fa-instagram"></i></a>
-                        <a class="btn btn-secondary btn-square mx-1" href="https://www.github.com/its-dammar/"><i
-                                class="fab fa-github"></i></a>
-                    </div>
-                    <div class="d-flex align-items-end justify-content-between border-top">
-                        <a href="resume.pdf" download="" class="btn w-50 border-end">Download CV</a>
-                        <a href="contact.html" class="btn w-50 btn-scroll">Contact Me</a>
-                    </div>
-                </div>
-            </aside>
-            <div class="col-lg-9 py-2">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light"
-                style="position: sticky; top:0; z-index:5; border-radius:10px;">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="about.html">About</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    More info..
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="skills.html">Skills</a></li>
-                                    <li><a class="dropdown-item" href="resume.html">Resume</a></li>
-                                    <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
-                                    <li><a class="dropdown-item" href="portfolio.html">Portfolio</a></li>
-                                    <li><a class="dropdown-item" href="projects.html">Projects</a></li>
-                                    <li><a class="dropdown-item" href="qualification.html">Qualification</a></li>
-                                    <li><a class="dropdown-item" href="experience.html">Experience</a></li>
+  <!-- TWO COLUMNS -->
+  <div class="cv-two">
 
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contact</a>
-                            </li>
-                    </div>
-                </div>
-            </nav>
+    <!-- LEFT COLUMN -->
+    <div class="cv-left">
 
-            <section class="wow fadeInUp" data-wow-delay="0.1s">
-                <div class="bg-secondary text-center p-5">
-                    <h1 class="text-white font-weight-bold">Resume</h1>
-                    <p class="text-white">Here is my Resume</p>
-                    
-                </div>
-            </section>
+      <!-- PROFESSIONAL SUMMARY -->
+      <div class="cv-section">
+        <h3 class="cv-section-title">Professional Summary</h3>
+        <p class="cv-summary">
+          Entrepreneur, lecturer and AI researcher with 7+ years of experience in web development,
+          IT training and academic instruction. Co-Founder &amp; Managing Director at SATRI
+          (Samarth Technical Research and Innovations). Lecturer at Pokhara College of Management
+          and Teaching &amp; Research Assistant at Gandaki University. Published researcher in
+          machine learning applied to student mental health. JCI Pokhara Board of Directors member.
+        </p>
+      </div>
 
-
-                <!-- resume Start -->
-                <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="title pb-3 mb-5">Resume</h1>
-                    <img src="" alt="">
-                </section>
-                <!-- resume End -->
-
-                <!-- Footer Start -->
-               <!-- Footer Start -->
-               <section class="wow fadeIn" data-wow-delay="0.1s">
-                <div class="bg-secondary text-light text-center p-5">
-                    <div class="d-flex justify-content-center mb-4">
-                        <a class="btn btn-secondary btn-square mx-1" href="https://www.twitter.com/its_dammar1/"><i
-                                class="fab fa-twitter"></i></a>
-                        <a class="btn btn-secondary btn-square mx-1" href="https://www.facebook.com/itsDammar20"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-secondary btn-square mx-1"
-                            href="https://www.linkedin.com/in/its-dammar/"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-secondary btn-square mx-1" href="https://www.instagram.com/its_dammar/"><i
-                                class="fab fa-instagram"></i></a>
-                        <a class="btn btn-secondary btn-square mx-1" href="https://www.github.com/its-dammar/"><i
-                                class="fab fa-github"></i></a>
-                    </div>
-                    <div class="d-flex justify-content-center mb-3">
-                        <a class="text-light px-3 border-end" href="#">Privacy</a>
-                        <a class="text-light px-3 border-end" href="#">Terms</a>
-                        <a class="text-light px-3 border-end" href="#">FAQs</a>
-                        <a class="text-light px-3" href="#">Help</a>
-                    </div>
-
-                    <p class="m-0">&copy; All Rights Reserved. Designed by <a
-                            href="https://dammarkhadayat.com.np">Dammar Khadayat</a></p>
-                </div>
-            </section>
-            <!-- Footer End -->
-                <!-- Footer End -->
-            </div>
+      <!-- CONTACT -->
+      <div class="cv-section">
+        <h3 class="cv-section-title">Contact</h3>
+        <div class="cv-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          <span>dammar.24063@gandakiuniversity.edu.np</span>
         </div>
+        <div class="cv-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          <span>info@dammarkhadayat.com.np</span>
+        </div>
+        <div class="cv-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Pokhara, Kaski, Nepal</span>
+        </div>
+        <div class="cv-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <span>+977-9868067264</span>
+        </div>
+        <div class="cv-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.76-1.95C21.4 8.75 22 11.1 22 14.2V21h-4v-6c0-1.43-.03-3.27-2-3.27-2 0-2.3 1.56-2.3 3.17V21h-4V9Z"/></svg>
+          <a href="https://linkedin.com/in/its-dammar" target="_blank">linkedin.com/in/its-dammar</a>
+        </div>
+        <div class="cv-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.2c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.4 1.24-3.25-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.24a11.4 11.4 0 0 1 6 0c2.29-1.56 3.3-1.24 3.3-1.24.66 1.66.24 2.88.12 3.18.77.85 1.24 1.93 1.24 3.25 0 4.63-2.8 5.65-5.48 5.95.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .5Z"/></svg>
+          <a href="https://github.com/its-dammar" target="_blank">github.com/its-dammar</a>
+        </div>
+        <div class="cv-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg>
+          <a href="https://dammarkhadayat.com.np" target="_blank">dammarkhadayat.com.np</a>
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="cv-section">
+        <h3 class="cv-section-title">Technical Skills</h3>
+        <div class="cv-skills-grid">
+          <span class="cv-skill">HTML5 / CSS3</span>
+          <span class="cv-skill">JavaScript</span>
+          <span class="cv-skill">PHP</span>
+          <span class="cv-skill">Laravel</span>
+          <span class="cv-skill">Python</span>
+          <span class="cv-skill">MySQL</span>
+          <span class="cv-skill">WordPress</span>
+          <span class="cv-skill">Tailwind CSS</span>
+          <span class="cv-skill">Figma</span>
+          <span class="cv-skill">Git / GitHub</span>
+          <span class="cv-skill">scikit-learn</span>
+          <span class="cv-skill">cPanel</span>
+          <span class="cv-skill">UI/UX Design</span>
+          <span class="cv-skill">Flutter / Dart</span>
+          <span class="cv-skill">Django</span>
+          <span class="cv-skill">Bootstrap</span>
+        </div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="cv-section">
+        <h3 class="cv-section-title">Languages</h3>
+        <p style="font-size:.8rem;margin-bottom:.25rem"><strong>Nepali</strong> &mdash; Full professional proficiency</p>
+        <p style="font-size:.8rem;margin-bottom:.25rem"><strong>English</strong> &mdash; Professional working proficiency</p>
+        <p style="font-size:.8rem"><strong>Hindi</strong> &mdash; Limited working proficiency</p>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="cv-section">
+        <h3 class="cv-section-title">Certifications &amp; Training</h3>
+        <div class="cv-item">
+          <h4>Web Development with PHP Laravel</h4>
+          <p class="cv-org">XDezo Academy &mdash; Certified Instructor</p>
+        </div>
+        <div class="cv-item">
+          <h4>UI/UX Design Fundamentals</h4>
+          <p class="cv-org">Code for Change Nepal &mdash; Workshop Facilitator</p>
+        </div>
+        <div class="cv-item">
+          <h4>Digital Marketing Strategy</h4>
+          <p class="cv-org">Multiple Colleges &mdash; Guest Trainer</p>
+        </div>
+        <div class="cv-item">
+          <h4>Applied Machine Learning</h4>
+          <p class="cv-org">Gandaki University &mdash; MIT-AI Research</p>
+        </div>
+      </div>
+
+      <!-- GITHUB -->
+      <div class="cv-section">
+        <h3 class="cv-section-title">GitHub</h3>
+        <p style="font-size:.8rem"><strong>38 repositories</strong> &middot; 51 followers &middot; 5 stars</p>
+        <div class="cv-tags">
+          <span class="cv-tag">Laravel TMS</span>
+          <span class="cv-tag">PHP Projects</span>
+          <span class="cv-tag">Frontend Dev</span>
+          <span class="cv-tag">Bootstrap</span>
+          <span class="cv-tag">Tailwind CSS</span>
+          <span class="cv-tag">Python Django</span>
+          <span class="cv-tag">UI/UX Docs</span>
+          <span class="cv-tag">JS Docs</span>
+        </div>
+        <p style="font-size:.75rem;margin-top:.5rem">
+          Achievements: <em>Pair Extraordinaire</em>, <em>Quickdraw</em>, <em>Pull Shark</em>
+        </p>
+      </div>
+
     </div>
 
+    <!-- RIGHT COLUMN -->
+    <div class="cv-right">
 
-    <!-- Back to Top -->
-    <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
-    <script>
-        var chatbox = document.getElementById('fb-customer-chat');
-        chatbox.setAttribute("page_id", "2134310760216618");
-        chatbox.setAttribute("attribution", "biz_inbox");
-      </script>
-  
-      <!-- Your SDK code -->
-      <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            xfbml            : true,
-            version          : 'v18.0'
-          });
-        };
-  
-        (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-      </script>
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/typed/typed.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+      <!-- EXPERIENCE -->
+      <div class="cv-section">
+        <h3 class="cv-section-title">Professional Experience</h3>
 
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>Co-Founder &amp; Managing Director</h4>
+            <span class="cv-date">Jan 2025 &mdash; Present</span>
+          </div>
+          <p class="cv-org">Samarth Technical Research and Innovations Pvt. Ltd. (SATRI), Pokhara</p>
+          <p>
+            Co-founded SATRI &mdash; a Pokhara-based technology company specialising in IT training,
+            web development and digital solutions. Leading strategic direction, 24+ training courses
+            (UI/UX, Full Stack, Data Analytics, Digital Marketing, Mobile App Development, Cybersecurity,
+            QA), team management, client delivery and academic partnerships.
+          </p>
+        </div>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>Lecturer &mdash; Internet Technology &amp; Web Development</h4>
+            <span class="cv-date">Sept 2024 &mdash; Present</span>
+          </div>
+          <p class="cv-org">Pokhara College of Management, Pokhara</p>
+          <p>
+            Primary instructor for undergraduate IT courses. Delivering lectures on HTML, CSS,
+            JavaScript, PHP Laravel, database design and deployment. Supervising student projects,
+            mentoring final-year research, and contributing to curriculum review.
+          </p>
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>Teaching &amp; Research Assistant, BIT Programme</h4>
+            <span class="cv-date">Jun 2024 &mdash; Present</span>
+          </div>
+          <p class="cv-org">Gandaki University, Pokhara</p>
+          <p>
+            Supporting curriculum delivery and lab sessions for the BIT programme. Contributing to
+            institutional research initiatives, student training programmes, and internal/external
+            workshop coordination at the Faculty of Science &amp; Technology.
+          </p>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>Director &mdash; International Area</h4>
+            <span class="cv-date">2025 &mdash; Present</span>
+          </div>
+          <p class="cv-org">JCI Pokhara, Nepal</p>
+          <p>
+            Elected to the 2025 Board of Directors. Leading the chapter's international portfolio &mdash;
+            partnerships, exchanges and representation within a global youth leadership network of
+            200,000+ members across 115+ countries.
+          </p>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>Managing Director</h4>
+            <span class="cv-date">2024 &mdash; Present</span>
+          </div>
+          <p class="cv-org">Pinnacle Academy, Pokhara</p>
+          <p>
+            Strategic and academic direction for an English-medium school. Overseeing academic
+            programmes, teacher training, and operational management using modern learning approaches.
+          </p>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>Managing Director</h4>
+            <span class="cv-date">May 2023 &mdash; Sept 2024</span>
+          </div>
+          <p class="cv-org">XDezo Technologies, Pokhara</p>
+          <p>
+            Led strategic operations, team management, business growth, client relationships and
+            delivery standards across web development and digital solutions projects.
+          </p>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>Academic Coordinator</h4>
+            <span class="cv-date">Oct 2021 &mdash; Sept 2024</span>
+          </div>
+          <p class="cv-org">XDezo Academy, Pokhara</p>
+          <p>
+            Planned and coordinated educational programmes, maintained academic standards, designed
+            curricula for web development courses and built a structured learning environment.
+          </p>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>Workshop Coordinator</h4>
+            <span class="cv-date">Feb 2021 &mdash; Sept 2024</span>
+          </div>
+          <p class="cv-org">XDezo Academy, Pokhara</p>
+          <p>
+            Organised and ran the academy's workshop calendar &mdash; intensive short courses on
+            front-end development, full-stack PHP Laravel, WordPress, UI/UX design and digital marketing.
+          </p>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>Instructor</h4>
+            <span class="cv-date">Mar 2020 &mdash; Sept 2024</span>
+          </div>
+          <p class="cv-org">XDezo Academy, Pokhara</p>
+          <p>
+            Four years of classroom instruction across web development subjects &mdash; HTML, CSS,
+            JavaScript, PHP, Laravel, WordPress. Mentoring technical and professional development.
+          </p>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>Web Developer &rarr; Senior Web Developer</h4>
+            <span class="cv-date">Jan 2019 &mdash; Sept 2024</span>
+          </div>
+          <p class="cv-org">XDezo Technologies, Pokhara</p>
+          <p>
+            Progressed from frontend development to leading web projects in PHP and Laravel.
+            Delivered production websites, e-commerce systems and custom CMS platforms.
+          </p>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="cv-section">
+        <h3 class="cv-section-title">Education</h3>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>Master of Information Technology &mdash; Artificial Intelligence (MIT-AI)</h4>
+            <span class="cv-date">Sept 2024 &mdash; Present</span>
+          </div>
+          <p class="cv-org">Gandaki University, Pokhara</p>
+          <p>
+            Specialising in applied machine learning. Research focused on predictive modelling for
+            student mental health and academic performance. Published paper on ResearchGate (March 2025).
+          </p>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>Bachelor of Computer Application (BCA)</h4>
+            <span class="cv-date">2018 &mdash; 2023</span>
+          </div>
+          <p class="cv-org">LA Grandee International College &mdash; Pokhara University</p>
+          <p>
+            Four major projects: C, Visual Basic, PHP/Laravel, Mobile App Development. Coursework
+            in networking, management and database systems.
+          </p>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>Higher Secondary (+2) &mdash; Management</h4>
+            <span class="cv-date">2016 &mdash; 2018</span>
+          </div>
+          <p class="cv-org">Little Buddha Academy, Mahendranagar, Kanchanpur</p>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>School Leaving Certificate (SLC)</h4>
+            <span class="cv-date">2015</span>
+          </div>
+          <p class="cv-org">Shree Deveshwary Secondary School, Bitthadchir, Bajhang</p>
+        </div>
+      </div>
+
+      <!-- PUBLICATIONS -->
+      <div class="cv-section">
+        <h3 class="cv-section-title">Publications</h3>
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>Predicting Student Depression Using Machine Learning</h4>
+            <span class="cv-date">March 2025</span>
+          </div>
+          <p class="cv-org">ResearchGate &mdash; Dammar Khadayat &amp; Prakash Poudel</p>
+          <p>
+            Classification study using logistic regression, random forest and gradient boosting
+            over 27,900 student records. Key findings: academic pressure and sleep duration are
+            the strongest predictors of student depression.
+          </p>
+          <div class="cv-tags">
+            <span class="cv-tag">Machine Learning</span>
+            <span class="cv-tag">Student Mental Health</span>
+            <span class="cv-tag">scikit-learn</span>
+            <span class="cv-tag">Python</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- WORKSHOPS -->
+      <div class="cv-section">
+        <h3 class="cv-section-title">Workshops &amp; Speaking</h3>
+        <div class="cv-item">
+          <p style="font-size:.8rem;line-height:1.6">
+            Delivered 20+ workshops and guest sessions across 10+ institutions including Code for
+            Change Nepal, CSITAN Pokhara, Nepal Engineering Association, LA Grandee International
+            College, Gandaki University, Pokhara College of Management, Kanyacampus, JMC,
+            Gupteshwor Campus, College MAC, Pinnacle Academy and SATRI. Topics include UI/UX
+            Design, Full Stack Web Development, Digital Marketing, IT Career Guidance, and
+            AI in Education.
+          </p>
+        </div>
+      </div>
+
+      <!-- LEADERSHIP -->
+      <div class="cv-section">
+        <h3 class="cv-section-title">Leadership &amp; Service</h3>
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>Director &mdash; International Area (Board of Directors)</h4>
+            <span class="cv-date">2025 &mdash; Present</span>
+          </div>
+          <p class="cv-org">JCI Pokhara, Nepal</p>
+        </div>
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>Executive Secretary</h4>
+            <span class="cv-date">2022 &mdash; 2023</span>
+          </div>
+          <p class="cv-org">LGIC TechTalk Committee, Pokhara</p>
+        </div>
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h4>Volunteer</h4>
+            <span class="cv-date">2015</span>
+          </div>
+          <p class="cv-org">Nepal Red Cross Society, Deulekh, Bajhang</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
 
 </body>
-
 </html>

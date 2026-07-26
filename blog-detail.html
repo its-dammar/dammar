@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Dammar Khadayat</title>
+<meta name="description" content="Articles on web development, machine learning, digital marketing, and technology education by Dammar Khadayat.">
+<meta name="author" content="Dammar Khadayat">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Blog — Dammar Khadayat">
+<meta property="og:description" content="Articles on web development, machine learning, digital marketing, and technology education.">
+<meta property="og:url" content="https://dammarkhadayat.com.np/blog-detail.html">
+<meta property="og:image" content="https://dammarkhadayat.com.np/img/poersonal/dammar-18-top.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B2447">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    container: { center: true, padding: '1.25rem' },
+    extend: {
+      colors: {
+        navy:  { DEFAULT:'#0B2447', 600:'#123259', 500:'#1B4272', 400:'#2C5A91' },
+        gold:  { DEFAULT:'#B8873B', light:'#D0A659', pale:'#F6EFE2' },
+        ink:   '#111C2E',
+        body:  '#4A5568',
+        line:  '#E4E8ED',
+        mist:  '#F6F8FA',
+      },
+      fontFamily: {
+        serif: ['"Source Serif 4"','Georgia','serif'],
+        sans:  ['Inter','ui-sans-serif','system-ui','sans-serif'],
+      },
+      maxWidth: { site: '1200px' },
+      boxShadow: {
+        card: '0 1px 2px rgba(11,36,71,.05), 0 8px 24px -12px rgba(11,36,71,.12)',
+        hover:'0 4px 10px rgba(11,36,71,.06), 0 18px 40px -18px rgba(11,36,71,.22)',
+      }
+    }
+  }
+}
+</script>
+
+<style>
+  html { scroll-padding-top: 92px; }
+  body { font-family: Inter, sans-serif; color:#4A5568; background:#fff; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4 { font-family:'Source Serif 4', Georgia, serif; color:#0B2447; }
+
+  .eyebrow{
+    font-size:.75rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#B8873B;
+  }
+  .section-title{ font-size:clamp(1.85rem,3.6vw,2.6rem); font-weight:700; line-height:1.18; letter-spacing:-.015em; }
+  .lead{ font-size:1.0625rem; line-height:1.8; }
+
+  .divider-gold{ width:52px; height:3px; background:#B8873B; border-radius:2px; }
+
+  .nav-link{ position:relative; padding:.35rem 0; font-size:.9375rem; font-weight:500; }
+  .nav-link::after{
+    content:''; position:absolute; left:0; right:0; bottom:-2px; height:2px; background:#B8873B;
+    transform:scaleX(0); transform-origin:left; transition:transform .28s ease;
+  }
+  .nav-link:hover::after{ transform:scaleX(1); }
+
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* article content */
+  .article-content h2 { font-size:1.5rem; font-weight:700; margin-top:2.5rem; margin-bottom:1rem; }
+  .article-content h3 { font-size:1.25rem; font-weight:600; margin-top:2rem; margin-bottom:0.75rem; }
+  .article-content p { margin-bottom:1.25rem; line-height:1.85; }
+  .article-content ul, .article-content ol { margin-bottom:1.25rem; padding-left:1.5rem; }
+  .article-content li { margin-bottom:0.5rem; line-height:1.75; }
+  .article-content ul { list-style-type:disc; }
+  .article-content ol { list-style-type:decimal; }
+  .article-content blockquote {
+    border-left:3px solid #B8873B; padding-left:1.5rem; margin:2rem 0;
+    font-family:'Source Serif 4',Georgia,serif; font-style:italic; font-size:1.1rem; color:#0B2447;
+  }
+  .article-content code {
+    background:#F6F8FA; border:1px solid #E4E8ED; border-radius:4px;
+    padding:0.15rem 0.4rem; font-size:0.875rem;
+  }
+  .article-content pre {
+    background:#0B2447; color:#e2e8f0; border-radius:8px; padding:1.5rem;
+    overflow-x:auto; margin:1.5rem 0; font-size:0.875rem; line-height:1.6;
+  }
+  .article-content pre code { background:transparent; border:none; padding:0; color:inherit; }
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid #B8873B; outline-offset:2px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+    .reveal{ opacity:1; transform:none; }
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+
+<body class="bg-white">
+
+<!-- ============ HEADER / NAV ============ -->
+<header id="header" class="sticky top-0 z-50 bg-white border-b border-line transition-shadow duration-300">
+  <div class="mx-auto max-w-site px-6">
+    <div class="flex items-center justify-between h-[68px]">
+
+      <a href="index.html#home" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded bg-navy text-white grid place-items-center font-serif font-bold text-lg">D</span>
+        <span class="leading-tight">
+          <span class="block font-serif font-bold text-navy text-[17px]">Dammar Khadayat</span>
+          <span class="block text-[11px] tracking-[.14em] uppercase text-gold font-semibold">Lecturer, Researcher &amp; Director</span>
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6 text-body">
+        <a href="index.html#home" class="nav-link hover:text-navy transition-colors">Home</a>
+        <a href="index.html#about" class="nav-link hover:text-navy transition-colors">About</a>
+        <a href="index.html#resume" class="nav-link hover:text-navy transition-colors">Résumé</a>
+        <a href="index.html#research" class="nav-link hover:text-navy transition-colors">Research</a>
+        <a href="index.html#workshops" class="nav-link hover:text-navy transition-colors">Workshops</a>
+        <a href="index.html#portfolio" class="nav-link hover:text-navy transition-colors">Portfolio</a>
+        <a href="index.html#blogs" class="nav-link text-navy transition-colors" style="color:#0B2447">Blogs</a>
+        <a href="index.html#speaking" class="nav-link hover:text-navy transition-colors">Speaking</a>
+        <a href="index.html#contact" class="nav-link hover:text-navy transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="index.html#contact" class="hidden sm:inline-flex items-center gap-2 h-11 px-5 rounded bg-gold text-white text-sm font-semibold hover:bg-navy transition-colors">
+          Hire Me
+        </a>
+        <button id="menuBtn" class="lg:hidden w-11 h-11 grid place-items-center rounded border border-line text-navy" aria-label="Toggle menu" aria-expanded="false">
+          <svg id="menuIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-line bg-white">
+    <nav class="mx-auto max-w-site px-6 py-3 grid">
+      <a href="index.html#home" class="py-3 border-b border-line text-body">Home</a>
+      <a href="index.html#about" class="py-3 border-b border-line text-body">About</a>
+      <a href="index.html#resume" class="py-3 border-b border-line text-body">Résumé</a>
+      <a href="index.html#research" class="py-3 border-b border-line text-body">Research</a>
+      <a href="index.html#workshops" class="py-3 border-b border-line text-body">Workshops</a>
+      <a href="index.html#portfolio" class="py-3 border-b border-line text-body">Portfolio</a>
+      <a href="index.html#blogs" class="py-3 border-b border-line text-body">Blogs</a>
+      <a href="index.html#speaking" class="py-3 border-b border-line text-body">Speaking</a>
+      <a href="index.html#contact" class="py-3 text-gold font-semibold">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ BLOG LISTING ============ -->
+<section class="py-20 md:py-28">
+  <div class="mx-auto max-w-site px-6">
+    <div class="reveal text-center max-w-2xl mx-auto">
+      <p class="eyebrow">Thoughts &amp; Writing</p>
+      <h1 class="section-title mt-3">Blog &amp; Articles</h1>
+      <div class="divider-gold mt-6 mx-auto"></div>
+      <p class="lead mt-6 text-body">
+        Reflections on technology, teaching, AI, and the intersection of education and industry.
+      </p>
+    </div>
+
+    <!-- ============ FEATURED ARTICLE ============ -->
+    <article class="reveal mt-14 border border-line rounded-lg overflow-hidden shadow-card">
+      <div class="grid lg:grid-cols-[1.6fr,1fr]">
+        <div class="p-8 md:p-11">
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="text-[11px] font-semibold tracking-[.12em] uppercase px-3 py-1.5 rounded bg-navy text-white">Featured Article</span>
+            <span class="text-sm text-body">Mar 2025</span>
+          </div>
+
+          <h2 class="text-2xl md:text-[1.7rem] font-bold mt-5 leading-snug">
+            Predicting Student Depression Using Machine Learning
+          </h2>
+
+          <p class="text-sm font-semibold text-navy-400 mt-4">
+            Dammar Khadayat &amp; Prakash Poudel
+          </p>
+
+          <div class="article-content mt-6 text-body">
+            <p>
+              Student depression has a measurable effect on academic performance, social life and
+              wellbeing, yet conventional diagnosis is slow and subjective. This study tested whether
+              it can be predicted from routine data instead.
+            </p>
+
+            <h3>The Problem</h3>
+            <p>
+              In Nepali higher education, student mental health remains an under-researched area.
+              Many students experience academic pressure, sleep disruption, financial stress and
+              social isolation &mdash; yet few seek formal support. Early detection could help
+              institutions intervene before a crisis.
+            </p>
+
+            <h3>Methodology</h3>
+            <p>
+              Using a dataset of approximately 27,900 student records covering demographic, academic
+              and lifestyle variables, we compared three classification models:
+            </p>
+            <ul>
+              <li><strong>Logistic Regression</strong> &mdash; baseline binary classifier (accuracy: 0.75)</li>
+              <li><strong>Random Forest</strong> &mdash; ensemble method (accuracy: 0.73)</li>
+              <li><strong>Gradient Boosting</strong> &mdash; sequential ensemble (accuracy: 0.75)</li>
+            </ul>
+
+            <h3>Key Findings</h3>
+            <p>
+              All three models performed in a similar band around the mid-0.70s, but the feature
+              analysis proved the more actionable result:
+            </p>
+            <ul>
+              <li><strong>Academic pressure</strong> emerged as the single strongest predictor of depression</li>
+              <li><strong>Sleep duration</strong> was the second most influential feature</li>
+              <li>Financial stress and family relationships contributed meaningfully but less strongly</li>
+            </ul>
+
+            <blockquote>
+              The finding that academic pressure and sleep are the strongest predictors suggests
+              that institutional interventions &mdash; workload management, sleep hygiene
+              campaigns, flexible assessment &mdash; could have a measurable impact on student
+              wellbeing.
+            </blockquote>
+
+            <h3>Implications</h3>
+            <p>
+              These results suggest that routine institutional data can serve as an early-warning
+              system. Rather than relying solely on self-reporting or clinical assessment, colleges
+              could use predictive models to identify at-risk students and provide targeted support.
+            </p>
+
+            <h3>Limitations &amp; Future Work</h3>
+            <p>
+              The dataset was cross-sectional, limiting causal inference. Future work will explore
+              longitudinal models and the integration of real-time data from learning management
+              systems. The fairness implications of predictive models in educational contexts also
+              warrant further investigation.
+            </p>
+          </div>
+
+          <div class="mt-7 flex flex-wrap gap-2">
+            <span class="text-xs font-medium border border-line rounded-full px-3 py-1.5">Machine Learning</span>
+            <span class="text-xs font-medium border border-line rounded-full px-3 py-1.5">Student Mental Health</span>
+            <span class="text-xs font-medium border border-line rounded-full px-3 py-1.5">Predictive Modelling</span>
+            <span class="text-xs font-medium border border-line rounded-full px-3 py-1.5">Educational Data</span>
+            <span class="text-xs font-medium border border-line rounded-full px-3 py-1.5">Python</span>
+            <span class="text-xs font-medium border border-line rounded-full px-3 py-1.5">scikit-learn</span>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="https://www.researchgate.net/publication/389847479_Predicting_Student_Depression_Using_Machine_Learning"
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 h-11 px-6 rounded bg-gold text-white font-semibold text-sm hover:bg-navy transition-colors">
+              Read on ResearchGate
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+            <a href="index.html#research"
+               class="inline-flex items-center gap-2 h-11 px-6 rounded border border-line text-navy font-semibold text-sm hover:border-navy transition-colors">
+              View Research Section
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-mist border-t lg:border-t-0 lg:border-l border-line p-8 md:p-11">
+          <p class="text-[11px] font-semibold tracking-[.14em] uppercase text-body/70">Model Performance</p>
+          <div class="mt-6 space-y-5">
+            <div>
+              <div class="flex justify-between text-sm font-medium text-navy mb-2"><span>Logistic Regression</span><span>0.75</span></div>
+              <div class="h-1.5 bg-white rounded-full overflow-hidden border border-line"><div class="h-full bg-navy rounded-full" style="width:75%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm font-medium text-navy mb-2"><span>Gradient Boosting</span><span>0.75</span></div>
+              <div class="h-1.5 bg-white rounded-full overflow-hidden border border-line"><div class="h-full bg-navy rounded-full" style="width:75%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm font-medium text-navy mb-2"><span>Random Forest</span><span>0.73</span></div>
+              <div class="h-1.5 bg-white rounded-full overflow-hidden border border-line"><div class="h-full bg-navy rounded-full" style="width:73%"></div></div>
+            </div>
+          </div>
+
+          <div class="h-px bg-line my-7"></div>
+          <p class="text-[11px] font-semibold tracking-[.14em] uppercase text-body/70">Sample Size</p>
+          <p class="font-serif text-3xl font-bold text-navy mt-2">27,900</p>
+          <p class="text-sm text-body">student records</p>
+
+          <div class="h-px bg-line my-7"></div>
+          <p class="text-[11px] font-semibold tracking-[.14em] uppercase text-body/70">Key Predictors</p>
+          <ul class="mt-3 space-y-2 text-[15px]">
+            <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span>Academic pressure</li>
+            <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span>Sleep duration</li>
+            <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span>Financial stress</li>
+            <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span>Family relationships</li>
+          </ul>
+
+          <div class="h-px bg-line my-7"></div>
+          <p class="text-[11px] font-semibold tracking-[.14em] uppercase text-body/70">Published</p>
+          <p class="text-sm text-body mt-2">March 2025 &mdash; ResearchGate</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============ MORE ARTICLES GRID ============ -->
+    <h2 class="text-2xl font-bold mt-20">More Articles</h2>
+    <div class="divider-gold mt-4"></div>
+
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <article class="reveal bg-white border border-line rounded-lg overflow-hidden shadow-card hover:shadow-hover hover:-translate-y-1 transition-all duration-300">
+        <div class="h-40 bg-navy grid place-items-center text-white/25">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m8 9-3 3 3 3M16 9l3 3-3 3M14 5l-4 14"/></svg>
+        </div>
+        <div class="p-7">
+          <div class="flex items-center gap-3">
+            <span class="text-[11px] font-semibold tracking-[.12em] uppercase text-gold">Technology</span>
+            <span class="text-xs text-body">Feb 2024</span>
+          </div>
+          <h3 class="text-lg font-bold mt-3">Laravel Command Lists</h3>
+          <p class="mt-2.5 text-[15px] leading-relaxed text-body">
+            A practical reference of essential Laravel artisan commands for routing, database
+            migrations, queue management, caching and deployment.
+          </p>
+          <a href="https://www.linkedin.com/pulse/laravel-command-lists-dammar-khadayat/" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-navy hover:text-gold transition-colors">
+            Read Article
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="reveal bg-white border border-line rounded-lg overflow-hidden shadow-card hover:shadow-hover hover:-translate-y-1 transition-all duration-300">
+        <div class="h-40 bg-navy-500 grid place-items-center text-white/25">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+        </div>
+        <div class="p-7">
+          <div class="flex items-center gap-3">
+            <span class="text-[11px] font-semibold tracking-[.12em] uppercase text-gold">Education</span>
+            <span class="text-xs text-body">Feb 2024</span>
+          </div>
+          <h3 class="text-lg font-bold mt-3">Top Digital Marketing Courses in Nepal</h3>
+          <p class="mt-2.5 text-[15px] leading-relaxed text-body">
+            A guide to the most effective digital marketing courses available in Nepal, covering
+            curriculum quality, practical exposure, and career outcomes.
+          </p>
+          <a href="https://www.linkedin.com/pulse/top-digital-marketing-courses-nepal-dammar-khadayat/" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-navy hover:text-gold transition-colors">
+            Read Article
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="reveal bg-white border border-line rounded-lg overflow-hidden shadow-card hover:shadow-hover hover:-translate-y-1 transition-all duration-300">
+        <div class="h-40 bg-gold grid place-items-center text-white/35">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h9"/></svg>
+        </div>
+        <div class="p-7">
+          <div class="flex items-center gap-3">
+            <span class="text-[11px] font-semibold tracking-[.12em] uppercase text-gold">Industry</span>
+            <span class="text-xs text-body">2024</span>
+          </div>
+          <h3 class="text-lg font-bold mt-3">Web Development Workshop for IT Students</h3>
+          <p class="mt-2.5 text-[15px] leading-relaxed text-body">
+            A recap of the comprehensive workshop covering front-end technologies, back-end PHP
+            Laravel, version control, deployment and security best practices.
+          </p>
+          <a href="blog-detail.html"
+             class="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-navy hover:text-gold transition-colors">
+            Read Article
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="reveal bg-white border border-line rounded-lg overflow-hidden shadow-card hover:shadow-hover hover:-translate-y-1 transition-all duration-300">
+        <div class="h-40 bg-navy-400 grid place-items-center text-white/25">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 5h16v14H4z"/><path d="M4 9h16M8 13h8M8 16h5"/></svg>
+        </div>
+        <div class="p-7">
+          <div class="flex items-center gap-3">
+            <span class="text-[11px] font-semibold tracking-[.12em] uppercase text-gold">Strategy</span>
+            <span class="text-xs text-body">Apr 2023</span>
+          </div>
+          <h3 class="text-lg font-bold mt-3">Social Media Marketing Strategy for Businesses</h3>
+          <p class="mt-2.5 text-[15px] leading-relaxed text-body">
+            Insights on creating and managing impactful social media strategies that enhance
+            brand visibility and engagement across platforms.
+          </p>
+          <a href="blog-detail.html"
+             class="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-navy hover:text-gold transition-colors">
+            Read Article
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="reveal bg-white border border-line rounded-lg overflow-hidden shadow-card hover:shadow-hover hover:-translate-y-1 transition-all duration-300">
+        <div class="h-40 bg-navy grid place-items-center text-white/25">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M22 10-10-5L2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+        </div>
+        <div class="p-7">
+          <div class="flex items-center gap-3">
+            <span class="text-[11px] font-semibold tracking-[.12em] uppercase text-gold">Education</span>
+            <span class="text-xs text-body">Ongoing</span>
+          </div>
+          <h3 class="text-lg font-bold mt-3">AI in Nepali Classrooms: How Generative Tools Are Changing Learning</h3>
+          <p class="mt-2.5 text-[15px] leading-relaxed text-body">
+            Reflections on how generative AI tools are reshaping the way undergraduates in Nepal
+            learn to code, and the opportunities and risks.
+          </p>
+          <a href="blog-detail.html"
+             class="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-navy hover:text-gold transition-colors">
+            Read Article
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="reveal mt-14 text-center">
+      <a href="index.html"
+         class="inline-flex items-center gap-2 h-12 px-7 rounded bg-navy text-white font-semibold hover:bg-gold transition-colors">
+        Back to Home
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-navy text-white/65">
+  <div class="mx-auto max-w-site px-6 py-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <div class="lg:col-span-2 max-w-sm">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded bg-white text-navy grid place-items-center font-serif font-bold text-lg">D</span>
+          <span class="font-serif font-bold text-white text-lg">Dammar Khadayat</span>
+        </div>
+        <p class="mt-5 text-[15px] leading-relaxed">
+          Lecturer in Information Technology, MIT-AI researcher, co-founder of SATRI, workshop
+          facilitator and web developer based in Pokhara, Nepal.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold text-[17px]">Quick Links</h3>
+        <ul class="mt-5 space-y-3 text-[15px]">
+          <li><a href="index.html#about" class="hover:text-gold-light transition-colors">About</a></li>
+          <li><a href="index.html#resume" class="hover:text-gold-light transition-colors">Résumé</a></li>
+          <li><a href="index.html#research" class="hover:text-gold-light transition-colors">Research</a></li>
+          <li><a href="index.html#workshops" class="hover:text-gold-light transition-colors">Workshops</a></li>
+          <li><a href="index.html#portfolio" class="hover:text-gold-light transition-colors">Portfolio</a></li>
+          <li><a href="index.html#blogs" class="hover:text-gold-light transition-colors text-gold-light font-semibold">Blogs</a></li>
+          <li><a href="poetry.html" class="hover:text-gold-light transition-colors">Poetry</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold text-[17px]">Contact</h3>
+        <ul class="mt-5 space-y-3 text-[15px]">
+          <li>Pokhara, Kaski<br>Gandaki Province, Nepal</li>
+          <li><a href="mailto:dammar.24063@gandakiuniversity.edu.np" class="hover:text-gold-light transition-colors break-all">dammar.24063@gandakiuniversity.edu.np</a></li>
+          <li><a href="https://dammarkhadayat.com.np" class="hover:text-gold-light transition-colors">dammarkhadayat.com.np</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-12 pt-7 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+      <p>&copy; <span id="year">2026</span> Dammar Khadayat. All rights reserved.</p>
+      <p>Pokhara &nbsp;·&nbsp; Gandaki Province &nbsp;·&nbsp; Nepal</p>
+    </div>
+  </div>
+</footer>
+
+<!-- back to top -->
+<button id="toTop" aria-label="Back to top"
+        class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-gold text-white grid place-items-center shadow-hover opacity-0 pointer-events-none transition-opacity duration-300 hover:bg-navy">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function () {
+    toTop.classList.toggle('opacity-0', window.scrollY <= 500);
+    toTop.classList.toggle('pointer-events-none', window.scrollY <= 500);
+  }, { passive: true });
+
+  toTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  });
+
+  var btn = document.getElementById('menuBtn');
+  var menu = document.getElementById('mobileMenu');
+  var icon = document.getElementById('menuIcon');
+  btn.addEventListener('click', function () {
+    var open = menu.classList.toggle('hidden') === false;
+    btn.setAttribute('aria-expanded', String(open));
+    icon.innerHTML = open ? '<path d="M18 6 6 18M6 6l12 12"/>' : '<path d="M3 6h18M3 12h18M3 18h18"/>';
+  });
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      menu.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+      icon.innerHTML = '<path d="M3 6h18M3 12h18M3 18h18"/>';
+    });
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

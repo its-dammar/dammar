@@ -1,0 +1,47 @@
+# robots.txt — dammarkhadayat.com.np
+# https://dammarkhadayat.com.np
+
+User-agent: *
+Allow: /
+Disallow: /img/
+Disallow: /assets/
+
+Sitemap: https://dammarkhadayat.com.np/sitemap.xml
+
+# AI crawlers — polite crawl rate
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 10
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 10
+
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 10
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 10
+
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 10
+
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 10
+
+# Search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
